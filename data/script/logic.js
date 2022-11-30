@@ -47,7 +47,7 @@ function Run() {
     let space = text.indexOf(" ");
     if (space < 0) space = text.length;
 
-    let command = encodeURIComponent(text.slice(0, space));
+    let command = encodeURIComponent(text.toLowerCase().slice(0, space));
         args = text.slice(space + 1, text.length),
         request = new XMLHttpRequest();
 
