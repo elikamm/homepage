@@ -1,12 +1,15 @@
 var screen = new Uint8Array(1000).fill(0),
     update = new Int8Array(1000).fill(1),
-    frame, ctx, caret = {
+    content, ctx, caret = {
         pos: -1, blink: 0, timer: null
     },
     back = '#3F33A0', front = '#7B6FD9';
 
 window.addEventListener('load', () => {
-    frame = document.getElementById('frame');
+    let frame = document.getElementById('frame');
+    content = document.getElementById('content');
+
+    content.style.display = 'block';
     ctx = frame.getContext('2d');
 });
 

@@ -1,4 +1,4 @@
-with (frame) {
+with (content) {
     style.animation = ''; offsetHeight;
     style.animation = 'roll 2s';
 }
