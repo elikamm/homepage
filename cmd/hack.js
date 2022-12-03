@@ -1,5 +1,4 @@
-front = "#33ff33";
-back = "#000000"
+front = "#33ff33"; back = "";
 update.fill(1);
 
 with (document.documentElement.style) {
@@ -7,6 +6,7 @@ with (document.documentElement.style) {
     setProperty('--back', '#000000');
 }
 
+document.body.style.backgroundImage = "url(data/asset/matrix.gif)";
 
 Line('READY.');
 blocked = false;

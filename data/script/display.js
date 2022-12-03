@@ -6,10 +6,8 @@ var screen = new Uint8Array(1000).fill(0),
     back = '#3F33A0', front = '#7B6FD9';
 
 window.addEventListener('load', () => {
-    let frame = document.getElementById('frame');
     content = document.getElementById('content');
-
-    content.style.display = 'block';
+    let frame = document.getElementById('frame');
     ctx = frame.getContext('2d');
 });
 
@@ -19,8 +17,14 @@ function Render() {
             let char = (i == caret.pos && caret.blink) ? 2 : (chars[screen[i]] || chars[0]),
                 ox = i % 40 * 8, oy = Math.floor(i / 40) * 8;
             for (let j = 0; j < 64; j++) {
-                ctx.fillStyle = char[j] == 0 ? back : front;
-                ctx.fillRect(ox + j % 8, oy + Math.floor(j / 8), 1, 1);
+                let fill = char[j] == 0 ? back : front;
+                if (fill) {
+                    ctx.fillStyle = fill;
+                    ctx.fillRect(ox + j % 8, oy + Math.floor(j / 8), 1, 1);
+                }
+                else {
+                    ctx.clearRect(ox + j % 8, oy + Math.floor(j / 8), 1, 1);
+                }
             }
             update[i] = 0;
         }

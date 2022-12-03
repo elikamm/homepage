@@ -7,11 +7,12 @@ body {
     background: var(--back);
     user-select: none;
     overflow: hidden;
+    background-position: center;
+    background-size: 80vmin 80vmin;
 }
 
 #content {
     position: absolute;
-    display: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -23,10 +24,6 @@ body {
     position: relative;
     width: 100%;
     image-rendering: pixelated;
-}
-@keyframes roll {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 #links {
@@ -61,16 +58,15 @@ body {
 }
 
 #error {
-    position: absolute;
+    position: relative;
+    float: left;
     text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-family: Arial, Helvetica, sans-serif;
     color: var(--front);
     font-size: 3vmin;
+    width: 100%;
+    margin-bottom: 10%;
 }
 #error span {
-    display: block;
     font-size: 2vmin;
 }
