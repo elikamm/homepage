@@ -4,6 +4,16 @@ window.addEventListener('load', () => {
     Print('**** ELIAS KAMM - @elikamm  ****', 44);
     Print('type "HELP" and press return to start!', 121);
     Print('READY.', 200); Move(240); Render();
+
+    frame.addEventListener('mousedown', (event) => {
+        if (!blocked) {
+            let rect = frame.getBoundingClientRect(),
+                x = Math.floor((event.clientX - rect.left) / rect.width * 40),
+                y = Math.floor((event.clientY - rect.top) / rect.height * 25);
+
+            Move(y * 40 + x);
+        }
+    });
 });
 
 window.addEventListener('keydown', (event) => {
