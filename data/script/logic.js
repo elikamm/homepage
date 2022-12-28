@@ -1,9 +1,15 @@
 var blocked = false;
 
 window.addEventListener('load', () => {
-    Print('**** ELIAS KAMM - @elikamm  ****', 44);
-    Print('type "HELP" and press return to start!', 121);
-    Print('READY.', 200); Move(240); Render();
+    Print('**** ELIAS KAMM - @elikamm  ****', 44); Move(120);
+    if (/mobi/i.test(window.navigator.userAgent))
+        Line(
+            '  +----------------------------------+',
+            '  Ithis website works best on desktopI',
+            '  +----------------------------------+', ''
+            );
+    Line(' type "HELP" and press return to start!');
+    Line('', 'READY.'); Render();
 
     frame.addEventListener('mousedown', (event) => {
         if (!blocked) {
