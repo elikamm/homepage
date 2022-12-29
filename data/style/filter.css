@@ -1,0 +1,81 @@
+#filter {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: fade 4s linear forwards;
+}
+@keyframes fade {
+    0% { background: #000000; }
+    10% { background: #000000; }
+    100% { background: transparent; }
+}
+
+#lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#00000050 40%, transparent 60%);
+    background-size: 100% max(.3vmin, 3px);
+    animation: scan 1s linear infinite;
+}
+@keyframes scan {
+    0% { background-position: 0 max(.3vmin, 3px); }
+    100% { background-position: 0 0vmin; }
+}
+
+#flicker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    animation: flicker .5s linear infinite;
+}
+@keyframes flicker {
+    0% { background: #00000004; }
+    20% { background: #00000002; }
+    30% { background: #00000011; }
+    60% { background: #00000004 }
+    70% { background: #00000010; }
+    90% { background: #00000001; }
+    100% { background: #00000009; }
+}
+
+#startup {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #ffffff;
+    animation: flash .4s forwards;
+    width: 100%;
+}
+@keyframes flash {
+    0% { top: -50%; opacity: 0; }
+    49% { top: 100%; opacity: .3; }
+    50% { top: 0%; opacity: .9; }
+    100% { top: 100%; opacity: .6; }
+}
+
+#overlay {
+    position: absolute;
+    top: 6vmin;
+    left: 8vmin;
+    font-size: 8vmin;
+    color: #00ff00;
+    opacity: 0;
+    animation: display 5s;
+}
+@keyframes display {
+    0% { opacity: 0; }
+    14% { opacity: 0; }
+    15% { opacity: 1; }
+    99% { opacity: 1; }
+    100% { opacity: 0; }
+}
