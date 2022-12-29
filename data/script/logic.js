@@ -11,16 +11,19 @@ window.addEventListener('load', () => {
     Line(' type "HELP" and press return to start!');
     Line('', 'READY.'); Render();
 
-    frame.addEventListener('mousedown', (event) => {
-        if (!blocked) {
-            let rect = frame.getBoundingClientRect(),
-                x = Math.floor((event.clientX - rect.left) / rect.width * 40),
-                y = Math.floor((event.clientY - rect.top) / rect.height * 25);
-
-            Move(y * 40 + x);
-        }
-    });
+    frame.addEventListener('mousedown', HandleMouse);
+    frame.addEventListener('mousemove', HandleMouse);
 });
+
+function HandleMouse(event) {
+    if (!blocked && event.which == 1) {
+        let rect = frame.getBoundingClientRect(),
+            x = Math.floor((event.clientX - rect.left) / rect.width * 40),
+            y = Math.floor((event.clientY - rect.top) / rect.height * 25);
+
+        Move(y * 40 + x);
+    }
+}
 
 window.addEventListener('keydown', (event) => {
     let key = event.key;
