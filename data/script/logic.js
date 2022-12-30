@@ -1,4 +1,4 @@
-var blocked = false;
+var blocked = false, runtime = {};
 
 window.addEventListener('load', () => {
     Print('**** ELIAS KAMM - @elikamm  ****', 44); Move(120);
