@@ -8,7 +8,7 @@ reset.innerHTML =
 document.head.append(reset);
 
 filter.style.animation = 'none';
-overlay.style.animation = 'none';
+source.style.animation = 'none';
 
 flash.style.animation = 'reset .2s forwards';
 
