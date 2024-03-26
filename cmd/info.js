@@ -6,7 +6,7 @@ let strings = [
     [7700, 'I mean,', 361], [8400, 'look at it!', 369],
     [9500, 'this is not really usable..', 401],
     [11300, 'anyways,', 481], [12000, 'wanna see something cool?', 490],
-    [13500, 'try the "TABLE" command.', 521], [15200, 'have fun!', 641]
+    [13500, 'try the "HACK" command.', 521], [15200, 'have fun!', 641]
 ];
 
 let playing = true, time = 0,
